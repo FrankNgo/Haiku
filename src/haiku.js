@@ -3,7 +3,7 @@ export function Poem (phrase){
 }
 
 Poem.prototype.CheckSyllable = function(phrase) {
-  var newPhrase = phrase.split(" ");
+  var newPhrase = phrase.toLowerCase().split(" ");
   let x = 0;
   for(var i = 0; i < newPhrase.length; i++)
   {
@@ -18,9 +18,24 @@ Poem.prototype.CheckSyllable = function(phrase) {
       {
         x = x - 1;
       }
-      else if (newWord[j].match(/[aeiou]/gi) && newWord[j++].match(/[aeiou]/gi))
+      else if (newWord[j].match(/[aeiou]/gi) && newWord[j++].match(/[bcdfghjklmnpqrstvwxyz]/gi))
       {
-        x = x - 1;
+        x = x + 1;
+      }
+      else if (newWord[j].match(/["ia"]/gi))
+      {
+        x = x + 1;
+        alert("Test 1");
+      }
+      else if (newWord[j].match(/["eo"]/gi))
+      {
+        x = x + 1;
+        alert("Test 2");
+      }
+      else if (newWord[j].match(/["ioust"]/gi))
+      {
+        x = x + 1;
+        alert("Test 3");
       }
     }
   }
