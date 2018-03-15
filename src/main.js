@@ -12,6 +12,5 @@ $(document).ready(function() {
     var poem = $("#inputPoem").val();
     var test = output.CheckSyllable(poem);
     alert(test);
-
   });
 });
